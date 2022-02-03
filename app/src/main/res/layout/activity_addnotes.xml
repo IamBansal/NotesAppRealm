@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddnotesActivity">
+
+    <EditText
+        android:id="@+id/etText"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:fontFamily="cursive"
+        android:hint="Text"
+        android:gravity="center"
+        android:layout_above="@id/etDesc"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:textColor="@color/black"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/etDesc"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:fontFamily="cursive"
+        android:hint="Description"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"
+        android:padding="10dp" />
+
+    <Button
+        android:layout_centerInParent="true"
+        android:id="@+id/btnSave"
+        android:text="Save Note"
+        android:textAllCaps="false"
+        android:fontFamily="cursive"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:elevation="10dp"
+        android:layout_below="@id/etDesc"
+        android:layout_width="300dp"
+        android:layout_height="50dp" />
+
+</RelativeLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="185dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="2dp"
+    app:cardCornerRadius="12dp"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:text="Insane Developer"
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:fontFamily="cursive"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/descTV"
+            android:text="Insane Developer is my name."
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_below="@id/titleTv"
+            android:fontFamily="cursive"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/idTv"
+            android:text="1"
+            android:visibility="invisible"
+            android:layout_toRightOf="@id/titleTv"
+            android:textSize="24sp"
+            android:layout_margin="5dp"
+            android:fontFamily="cursive"
+            android:textColor="@color/teal_200"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
