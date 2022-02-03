@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/greyish"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -13,12 +14,18 @@
         android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
         android:id="@+id/FloatButton"
-        android:src="@drawable/ic_baseline_add_24"
         android:layout_width="48dp"
-        android:layout_height="48dp" />
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:background="@color/greyish"
+        android:backgroundTint="@color/greyish"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/add"
+        android:src="@drawable/ic_baseline_add_24" />
 
   </RelativeLayout>

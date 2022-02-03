@@ -3,6 +3,7 @@
     android:layout_width="185dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="2dp"
+    android:id="@+id/card"
     app:cardCornerRadius="12dp"
     android:orientation="vertical"
     android:layout_margin="5dp"
@@ -14,24 +15,48 @@
 
         <TextView
             android:id="@+id/titleTv"
-            android:text="Insane Developer"
-            android:textSize="24sp"
-            android:layout_margin="10dp"
-            android:fontFamily="cursive"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="cursive"
+            android:text="Insane Developer"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/descTV"
-            android:text="Insane Developer is my name."
-            android:textSize="20sp"
-            android:layout_margin="10dp"
-            android:layout_below="@id/titleTv"
-            android:fontFamily="cursive"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTv"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="cursive"
+            android:maxLines="4"
+            android:text="Insane Developer is my name."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/timeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descTV"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="cursive"
+            android:maxLength="12"
+            android:text="Insane Developer is my name."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
         <TextView
             android:id="@+id/idTv"
             android:text="1"

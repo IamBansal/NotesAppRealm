@@ -10,7 +10,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:fontFamily="cursive"
-        android:hint="Text"
+        android:hint="Title"
         android:gravity="center"
         android:layout_above="@id/etDesc"
         android:layout_centerInParent="true"
