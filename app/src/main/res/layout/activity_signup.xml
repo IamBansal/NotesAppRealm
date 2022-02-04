@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_below="@id/emailLayoutS"
         app:passwordToggleEnabled="true"
         android:backgroundTint="@color/white">
 
@@ -30,9 +31,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/emailLayoutS"
-        android:layout_centerInParent="true"
-        android:layout_above="@id/passLayoutS"
-        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/white"
         app:passwordToggleEnabled="false">
 
@@ -40,11 +41,74 @@
             android:id="@+id/emailSign"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:backgroundTint="@color/white"
             android:hint="Email" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/phoneLayoutS"
+        android:layout_below="@id/nameLayoutS"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/white"
+        app:passwordToggleEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:inputType="phone"
+            android:backgroundTint="@color/white"
+            android:hint="Phone Number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutLayoutS"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/phoneLayoutS"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/white"
+        app:passwordToggleEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/About"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="@color/white"
+            android:hint="About User" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameLayoutS"
+        android:layout_below="@id/CPassLayoutS"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/white"
+        app:passwordToggleEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="@color/white"
+            android:hint="Full Name" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/CPassLayoutS"
@@ -52,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_below="@id/passLayoutS"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:backgroundTint="@color/white"
         app:passwordToggleEnabled="true">
 
@@ -71,13 +135,13 @@
         android:id="@+id/btnSign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/CPassLayoutS"
+        android:layout_below="@id/aboutLayoutS"
         android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:textAllCaps="false"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Signup" />
+        android:text="Signup"
+        android:textAllCaps="false" />
 
 </RelativeLayout>
