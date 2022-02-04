@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Users/abans/AndroidStudioProjects/NotesApp/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2484375" />
         <entry key="..\:/Users/abans/AndroidStudioProjects/NotesApp/app/src/main/res/layout/activity_addnotes.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/abans/AndroidStudioProjects/NotesApp/app/src/main/res/layout/activity_login_signup.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/abans/AndroidStudioProjects/NotesApp/app/src/main/res/layout/activity_main.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/abans/AndroidStudioProjects/NotesApp/app/src/main/res/layout/activity_note_open.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/abans/AndroidStudioProjects/NotesApp/app/src/main/res/layout/activity_signup.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/abans/AndroidStudioProjects/NotesApp/app/src/main/res/layout/notes_rv_layout.xml" value="0.23229166666666667" />
       </map>
     </option>

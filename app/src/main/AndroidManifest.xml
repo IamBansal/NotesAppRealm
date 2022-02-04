@@ -11,13 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NotesApp">
         <activity
+            android:name=".Signup"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".NoteOpen"
             android:exported="false" />
         <activity
             android:name=".AddnotesActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginSignup"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
