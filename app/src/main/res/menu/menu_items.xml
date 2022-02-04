@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Logout" android:id="@+id/btnLogout" />
+    <item android:title="Profile" android:id="@+id/btnProfile" />
+    <item android:title="Dark Mode" android:id="@+id/btnDark"/>
+    <item android:title="Light Mode" android:id="@+id/btnLight"/>
+
+</menu>

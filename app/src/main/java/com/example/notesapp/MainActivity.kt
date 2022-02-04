@@ -3,7 +3,12 @@ package com.example.notesapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -17,6 +22,41 @@ class MainActivity : AppCompatActivity() {
     private lateinit var notesRv : RecyclerView
     private lateinit var notesList : ArrayList<Notes>
     private lateinit var realm : Realm
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_items, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.btnLogout -> {
+
+                val alert = AlertDialog.Builder(this)
+                alert.setTitle("Logout requested..")
+                    .setMessage("You sure you want to logout?")
+                    .setPositiveButton("Yes, Logout!!"){_,_->
+                        startActivity(Intent(this, LoginSignup::class.java))
+                    }
+                    .create()
+                    .show()
+                return true
+            }
+            R.id.btnDark -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                return true
+            }
+            R.id.btnLight -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                return true
+            }
+            R.id.btnProfile -> {
+                startActivity(Intent(this, Profile::class.java))
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
