@@ -30,6 +30,9 @@ class CustomCloudAdapter(private var context: Context, private var data : ArrayL
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+//        val keyId = /.
+
         holder.itemView.findViewById<TextView>(R.id.titleTv).text = data[position].Title
         holder.itemView.findViewById<TextView>(R.id.descTV).text = data[position].Description
 //        holder.itemView.findViewById<TextView>(R.id.idTv).text = data[position].id.toString()
@@ -51,9 +54,11 @@ class CustomCloudAdapter(private var context: Context, private var data : ArrayL
                 .setTitle("Delete Note!!")
                 .setPositiveButton("Yes, Delete"){_,_->
                     FirebaseDatabase.getInstance().reference.child("Notes")
-                        .child(data[position].toString()).removeValue().addOnSuccessListener {
-//                            if(task.) {
-                                Toast.makeText(context, "Deleted.", Toast.LENGTH_SHORT).show()
+                        .child(position.toString()).removeValue().addOnSuccessListener {
+                                Toast.makeText(context, "Deleted. ${position}", Toast.LENGTH_SHORT).show()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
                         }
                     notifyDataSetChanged()
                 }

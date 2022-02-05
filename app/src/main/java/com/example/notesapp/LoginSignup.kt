@@ -17,6 +17,7 @@ class LoginSignup : AppCompatActivity() {
     private var password : TextInputEditText? = null
     private var login : Button? = null
     private var signuptext : TextView? = null
+    private var anonymous : TextView? = null
 //    private var checkBox : CheckBox? = null
     private var firebaseAuth : FirebaseAuth? = null
 
@@ -31,6 +32,7 @@ class LoginSignup : AppCompatActivity() {
         password = findViewById(R.id.passLog)
         login = findViewById(R.id.btnLogin)
         signuptext = findViewById(R.id.tvSign)
+        anonymous = findViewById(R.id.tvSignAnonymous)
         firebaseAuth = FirebaseAuth.getInstance()
 
         login?.setOnClickListener {
@@ -39,6 +41,25 @@ class LoginSignup : AppCompatActivity() {
 
         signuptext?.setOnClickListener {
             startActivity(Intent(this, Signup::class.java))
+        }
+
+        anonymous?.setOnClickListener {
+            anonymousLogin()
+        }
+
+    }
+
+
+    //For anonymous login.
+    private fun anonymousLogin() {
+
+        firebaseAuth?.signInAnonymously()?.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(this, "Guest logged in successfully.", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MainActivity::class.java))
+            } else {
+                Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
+            }
         }
 
     }
@@ -54,7 +75,7 @@ class LoginSignup : AppCompatActivity() {
                 startActivity(Intent(this, MainActivity::class.java))
             }
 //        } else {
-//            Toast.makeText(this, "unchecjed", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "unchecked", Toast.LENGTH_SHORT).show()
 //        }
     }
 
