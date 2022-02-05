@@ -1,5 +1,6 @@
 package com.example.notesapp
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -29,6 +30,7 @@ class NotesAdapter(private var context: Context, private var notesList: RealmRes
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         holder.itemView.findViewById<TextView>(R.id.titleTv).text = notesList[position]!!.title
         holder.itemView.findViewById<TextView>(R.id.descTV).text = notesList[position]!!.description

@@ -54,6 +54,7 @@
         android:layout_margin="20dp"
         android:fontFamily="@font/architects_daughter"
         android:text="About User"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="30dp" />
 

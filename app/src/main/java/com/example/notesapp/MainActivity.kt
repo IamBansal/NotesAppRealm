@@ -1,18 +1,18 @@
 package com.example.notesapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
 import io.realm.Realm
 import io.realm.RealmResults
 
@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
                 alert.setTitle("Logout requested..")
                     .setMessage("You sure you want to logout?")
                     .setPositiveButton("Yes, Logout!!"){_,_->
+                        FirebaseAuth.getInstance().signOut()
+//                        findViewById<CheckBox>(R.id.checkbox).isChecked = false
                         startActivity(Intent(this, LoginSignup::class.java))
                     }
                     .create()
@@ -52,6 +54,14 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.btnProfile -> {
                 startActivity(Intent(this, Profile::class.java))
+                return true
+            }
+            R.id.btnCloudList -> {
+                startActivity(Intent(this, CloudList::class.java))
+                return true
+            }
+            R.id.btnLocalList -> {
+//                startActivity(Intent(this, Profile::class.java))
                 return true
             }
         }
@@ -76,6 +86,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun getAllNotes() {
 
         notesList = ArrayList()

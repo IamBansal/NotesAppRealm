@@ -31,19 +31,35 @@
         android:padding="10dp" />
 
     <Button
-        android:layout_centerInParent="true"
         android:id="@+id/btnSave"
-        android:text="Save Note"
-        android:textAllCaps="false"
-        android:fontFamily="cursive"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/etDesc"
+        android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20dp"
         android:elevation="10dp"
-        android:layout_below="@id/etDesc"
+        android:fontFamily="cursive"
+        android:text="Save Note"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnSaveC"
         android:layout_width="300dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_below="@id/btnSave"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/white"
+        android:elevation="10dp"
+        android:fontFamily="cursive"
+        android:text="Save Note to Cloud"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

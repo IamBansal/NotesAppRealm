@@ -8,16 +8,21 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import io.realm.Realm
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.HashMap
 
 class AddnotesActivity : AppCompatActivity() {
 
     private lateinit var titleED : EditText
     private lateinit var descriptionEd : EditText
     private lateinit var save : Button
+    private lateinit var saveC : Button
     private lateinit var realm : Realm
+    private var firebaseAuth:FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,17 +34,52 @@ class AddnotesActivity : AppCompatActivity() {
         titleED = findViewById(R.id.etText)
         descriptionEd = findViewById(R.id.etDesc)
         save = findViewById(R.id.btnSave)
+        saveC = findViewById(R.id.btnSaveC)
         realm = Realm.getDefaultInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
 
         save.setOnClickListener {
             if(TextUtils.isEmpty(titleED.text) && TextUtils.isEmpty(descriptionEd.text)) {
              val alert = AlertDialog.Builder(this)
-                 .setTitle("Unexpected :(")
+                 alert.setTitle("Unexpected :(")
                  .setMessage("Can't add empty note.")
                  .setPositiveButton("Okay Sorry!!"){_,_-> }
                  .show()
             } else {
                 addNotesToDB()
+            }
+        }
+
+        saveC.setOnClickListener {
+            if(TextUtils.isEmpty(titleED.text) && TextUtils.isEmpty(descriptionEd.text)) {
+             val alert = AlertDialog.Builder(this)
+                 alert.setTitle("Unexpected :(")
+                 .setMessage("Can't add empty note.")
+                 .setPositiveButton("Okay Sorry!!"){_,_-> }
+                 .show()
+            } else {
+                addNotesToCloud()
+            }
+        }
+
+    }
+
+    private fun addNotesToCloud() {
+
+        val date = Calendar.getInstance().time
+        val formattedDate = SimpleDateFormat.getDateTimeInstance().format(date)
+
+        val ref = FirebaseDatabase.getInstance().reference.child("Notes")
+        val map = HashMap<String, Any>()
+        map["Title"] = titleED.text.toString().trim()
+        map["Description"] = descriptionEd.text.toString().trim()
+        map["Time"] = formattedDate.toString()
+
+        ref.push().updateChildren(map).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                addNotesToDB()
+            } else {
+                Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
             }
         }
 

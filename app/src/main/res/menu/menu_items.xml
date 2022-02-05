@@ -3,6 +3,8 @@
 
     <item android:title="Logout" android:id="@+id/btnLogout" />
     <item android:title="Profile" android:id="@+id/btnProfile" />
+    <item android:title="Cloud List" android:id="@+id/btnCloudList" />
+    <item android:title="Local List" android:id="@+id/btnLocalList" />
     <item android:title="Dark Mode" android:id="@+id/btnDark"/>
     <item android:title="Light Mode" android:id="@+id/btnLight"/>
 
